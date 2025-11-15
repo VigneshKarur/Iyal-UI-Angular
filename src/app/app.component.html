@@ -1,3 +1,8 @@
-<div appDisableRightClick style="width: 100%; height: 100%;">
-<p>Vignesh</p>
+<div appDisableRightClick style="overflow: hidden">
+  <div class="header-section"><app-header></app-header></div>
+  <app-loader [isLoading]="(loading$ | async) || false"></app-loader>
+  <div class="pages">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="footer-section"></div>
 </div>

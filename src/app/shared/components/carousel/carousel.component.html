@@ -1,0 +1,28 @@
+<ngb-carousel
+  #carousel
+  [showNavigationArrows]="page!=='home'"
+  [showNavigationIndicators]="false"
+  [interval]="interval"
+  [pauseOnHover]="false"
+  [ngClass]="{'m-[2%] xl:m-[12%] lg:m-[8%] md:m-[4%] sm:m-[2%] !mt-[0] !mb-[0]':page!=='home'}"
+>
+ <ng-template ngbSlide *ngFor="let slide of slides; let i = index;">
+  <div class="picsum-img-wrapper">
+    <img
+      class="cursor-pointer"
+      [ngClass]="{ 'full-img': page === 'home', 'slide-potrait': page !== 'home' }"
+      [src]="slide.image ? slide.image : slide"
+      alt="Random first slide"
+      (click)="onImageClick(i, slide.caption)"
+    />
+  </div>
+  
+  <div
+    *ngIf="slide.caption"
+    class="carousel-caption slide-{{i}} pointer-events-none"
+  >
+    {{ slide.caption }}
+  </div>
+</ng-template>
+
+</ngb-carousel>

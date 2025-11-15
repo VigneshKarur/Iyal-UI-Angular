@@ -1,0 +1,68 @@
+<div class="mobile flex h-[60px]">
+  <div>
+    <div *ngIf="openMenu" class="flex">
+      <div class="logo">
+        <a href="" routerLink="/"
+          ><span
+            class="text-[16px] top-[21px] sm:top-[8px]"
+            style="font-family: Helvetica"
+            >the</span
+          >
+          <span class="ml-[25px] text-[36px] sm:text-[24px] font-bold top-[0px]"
+            >iyal atelier</span
+          ></a
+        >
+      </div>
+      <div (click)="toggleButton()" style="margin-right: 10px; margin-top: 5px">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </div>
+    </div>
+    <div
+      *ngIf="!openMenu"
+      (click)="toggleButton()"
+      style="
+        background: white;
+        width: 100%;
+        position: absolute;
+        z-index: 11;
+        height: 120vh;
+      "
+    >
+      <div style="margin-left: 90%; margin-top: 10px">X</div>
+      <div
+        style="
+          margin-top: 25px;
+          line-height: 50px;
+          text-align: center;
+          background: white;
+        "
+      >
+        <ul>
+          <li *ngFor="let tab of tabs">
+            <a [routerLink]="'/' + tab.toLowerCase()">
+              <div class="header-tab">{{ tab }}</div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="header not-mobile">
+  <div class="logo">
+    <a href="" routerLink="/"
+      ><span class="text-[20px] top-[21px]">the</span>
+      <span class="ml-[35px] text-[40px] font-bold top-[0px]"
+        >iyal atelier</span
+      ></a
+    >
+  </div>
+  <div class="header-tabs-container">
+    <a
+      *ngFor="let tab of tabs;"
+      [routerLink]="'/' + tab.toLowerCase()"
+    >
+      <div class="header-tab">{{ tab }}</div>
+    </a>
+  </div>
+</div>
