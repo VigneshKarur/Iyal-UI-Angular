@@ -1,0 +1,141 @@
+.full-img {
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.slide-potrait {
+  max-height: 120vh;
+  margin: auto;
+}
+
+::ng-deep .carousel-caption {
+  position: absolute;
+  right: 0;
+  top: 10%;
+  bottom: 1.25rem;
+  left: -50%;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  text-align: center;
+  font-size: 32px;
+  color: black;
+  opacity: 0.5;
+}
+
+.slide-0,
+.slide-3,
+.slide-6 {
+  right: -50%;
+  left: 100px;
+}
+.slide-2 {
+  color: white;
+}
+.slide-1 {
+  top: 70%;
+  left: -20%;
+  color: white;
+}
+.slide-3 {
+  left: 2%;
+  top: 50px;
+  right: 0;
+}
+
+::ng-deep .carousel-caption {
+  position: absolute;
+  transition: transform 2.5s ease, opacity 2.5s ease;
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+::ng-deep .carousel-control-prev-icon,
+::ng-deep .carousel-control-next-icon {
+  background-image: none;
+  color: black;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+::ng-deep .carousel-control-prev {
+  left: -10%;
+}
+::ng-deep .carousel-control-next {
+  right: 4%;
+}
+::ng-deep .carousel-control-prev::after {
+  content: "‹";
+  color: black;
+  font-size: 3rem;
+}
+
+::ng-deep .carousel-control-next::after {
+  content: "›";
+  color: black;
+  font-size: 3rem;
+}
+
+::ng-deep .carousel-item.active .carousel-caption {
+  transform: translateX(0);
+  opacity: 0.5;
+}
+
+@media only screen and (max-width: 700px) {
+  .slide-potrait {
+    max-height: 30vh;
+  }
+  .slide-0,
+  .slide-1,
+  .slide-2,
+  .slide-3,
+  .slide-4,
+  .slide-5,
+  .slide-6,
+  .slide-7 {
+    left: 2%;
+    top: 10%;
+    right: 0;
+    font-size: large;
+  }
+  .slide-5 {
+    color: black;
+    opacity: 1 !important;
+  }
+  .slide-1 {
+    top: 70%;
+  }
+  .slide-5 {
+    top: 90%;
+  }
+  .slide-7 {
+    top: 80%;
+    color: aliceblue;
+    opacity: 1 !important;
+  }
+}
+@media only screen and (min-width: 700px) and (max-width: 1200px) {
+  .slide-0,
+  .slide-1,
+  .slide-2,
+  .slide-3,
+  .slide-4,
+  .slide-5,
+  .slide-6,
+  .slide-7 {
+    font-size: larger;
+  }
+  .slide-potrait {
+    max-height: 70vh;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1500px) {
+  .slide-potrait {
+    max-height: 80vh;
+  }
+}

@@ -1,11 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
-html, body {
-    height: 100%;
-    margin: 0;
-  }
-  
-  app-root {
-    display: block;
-    height: 100%;
-    width: 100%;
-  }
+@import "tailwindcss";
+@reference "tailwindcss";
+
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/carousel";
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+app-root {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+a {
+  text-decoration: none !important;
+  color: black !important;
+}
+
+#ngb-carousel-0-next,
+#ngb-carousel-0-previous,
+.visually-hidden {
+  display: none !important;
+}

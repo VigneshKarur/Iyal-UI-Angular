@@ -1,0 +1,58 @@
+.header-tab {
+  margin: 0px 10px;
+}
+
+.header {
+  display: flex;
+  margin: 20px 0px;
+}
+
+.header-tabs-container {
+  display: flex;
+}
+
+.logo {
+  flex: 1;
+  margin-left: 10px;
+  font-family: Helvetica;
+}
+
+.logo img {
+  width: 50px;
+  position: absolute;
+  top: 24px;
+  right: 20px;
+}
+
+.logo span {
+  position: absolute;
+}
+
+.search {
+  position: absolute;
+  right: 150px;
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 700px) {
+  .mobile {
+    display: block;
+  }
+  .not-mobile {
+    display: none;
+  }
+  .logo img {
+    top: 4px;
+    width: 40px;
+    left: 50%;
+  }
+  .fa-bars{
+    font-size: 36px;
+    -webkit-text-stroke: 3px white;
+  }
+}
+@media only screen and (min-width: 700px) {
+  .mobile {
+    display: none;
+  }
+}
