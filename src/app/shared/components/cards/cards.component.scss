@@ -1,0 +1,130 @@
+.projectDiv {
+  width: 200px;
+  height: 120px;
+  overflow: hidden;
+}
+
+.portfolioDiv {
+  width: 450px;
+  overflow: hidden;
+  // margin-bottom: 16px;
+}
+
+.projectDiv img {
+  cursor: pointer;
+  width: 200px;
+  height: 150px;
+}
+
+.portfolioDiv img {
+  cursor: pointer;
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.9s ease;
+}
+.portfolioDiv:hover img {
+  transform: scale(1.1);
+}
+
+.more-photo {
+  position: relative;
+}
+
+.more-photo span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 8px 12px;
+  font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  height: 275px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(80, 80, 80, 0.5);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  &:hover img {
+    transform: scale(1.1);
+  }
+
+  &:hover .overlay {
+    opacity: 1;
+  }
+}
+
+::ng-deep .p-galleria-item-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 900px;
+  height: 900px;
+}
+
+::ng-deep .p-galleria-item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+::ng-deep .p-galleria-close {
+  z-index: 9999;
+  background-color: black;
+  opacity: 0.75;
+}
+::ng-deep .p-galleria .p-galleria-close .p-icon-wrapper .p-icon {
+  width: 1rem;
+}
+
+img {
+  cursor: pointer;
+}
+
+.project-grid {
+  object-fit: cover;
+  width: 90% !important;
+  aspect-ratio: 1 / 1;
+  margin: 10px;
+}
+
+@media only screen and (max-width: 700px) {
+  .project-grid {
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    margin: 5%;
+  }
+}

@@ -1,0 +1,20 @@
+<div class="mt-[80px] flex">
+  <div>
+      <a href=""routerLink="/portfolio"><i class="fas fa-arrow-left ml-[30px] sm: ml-[70px] mt-[15px] text-[20px] font-bold absolute cursor-pointer" ></i></a>
+  </div>
+  <div class="text-center text-[24px] sm:text-[32px]  flex-auto">
+  {{projectDescription[0].value}}
+</div>
+</div>
+<div class="">
+    <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 2xl:grid-cols-6 gap-1 mt-[20px] mb-[20px]" style="justify-content: space-around;">
+      <div *ngFor="let entry of projectDescription" [ngClass]="{'hidden': entry.key === 'Id'}" class="flex m-[10px] justify-center">
+  <span class="font-bold">{{ entry.key }}</span>: <span>{{ entry.value }}</span>
+</div>
+
+      </div>
+    <div class="">
+        <app-cards [slides]="slides" [images]="images" [openImage]="true" [page]="'project'" [coverImage]="coverImage"></app-cards>
+    </div>
+</div>
+

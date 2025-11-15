@@ -1,0 +1,95 @@
+<div class="card justify-center" [ngClass]="{ 'flex': page === 'portfolio' }">
+  
+  <!-- Only show carousel if page is 'project' -->
+  <div *ngIf="page === 'project'">
+    <!-- <img [src]="coverImage" alt="" style="width: 100%;"> -->
+    <app-carousel
+      [slides]="slides"
+      [page]="'cards'"
+      [interval]="0"
+      (imageClick)="imageClick($event)"
+    ></app-carousel>
+  </div>
+
+  <!-- Image Grid Section -->
+  <div
+    *ngIf="images && images.length > 0"
+    [class]="gridOptions()"
+  >
+
+    <!-- If page is 'project' -->
+    <ng-container *ngIf="page === 'project'; else portfolioTemplate">
+      <div
+        *ngFor="let image of images; let index = index"
+        class=""
+      >
+        <div class="">
+          <img
+            [src]="image"
+            alt="Image"
+            [ngClass]="{ 'project-grid': page === 'project' }"
+            (click)="imageClick(index)"
+          />
+          <div
+            (click)="imageClick(index)"
+            class=""
+          >
+            {{ projectList[index] }}
+          </div>
+        </div>
+      </div>
+    </ng-container>
+
+    <!-- Else: portfolioTemplate -->
+    <ng-template #portfolioTemplate>
+      <div
+        *ngFor="let image of images; let index = index"
+        class="portfolioDiv"
+      >
+        <div class="image-container">
+          <img
+            [src]="image"
+            alt="Image"
+            [ngClass]="{ 'project-grid': page === 'project' }"
+            (click)="imageClick(index)"
+          />
+          <div
+            (click)="imageClick(index)"
+            class="overlay"
+          >
+            {{ projectList[index] }}
+          </div>
+        </div>
+      </div>
+    </ng-template>
+
+    <!-- Galleria Component -->
+    <p-galleria
+      *ngIf="imagesReady"
+      [value]="images"
+      [(visible)]="displayCustom"
+      [(activeIndex)]="activeIndex"
+      [responsiveOptions]="responsiveOptions"
+      [containerStyle]="{ 'max-width': '1900px' }"
+      [numVisible]="7"
+      [circular]="true"
+      [fullScreen]="true"
+      [showItemNavigators]="true"
+      [showThumbnails]="false"
+    >
+      <ng-template pTemplate="item" let-item>
+        <img
+          [src]="item"
+          loading="eager"
+          alt="Gallery Image"
+          [style]="{
+            objectFit: 'contain',
+            width: '100%',
+            height: '100%'
+          }"
+        />
+      </ng-template>
+    </p-galleria>
+    
+  </div>
+</div>
